@@ -1,10 +1,14 @@
+using Northwind.Web.DependencyInjection;
 using Northwind.Web.Dependencys;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddRegionDependency();
+
+builder.Services.AddNorthwindDependencies();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
